@@ -1,0 +1,5 @@
+1. Đặt tên bảng: tenduan_chimuc+tenbang 
+		VD: TKB_dmPhongHoc, TKB_dmDungCu
+
+2. Nên đặt Add-Migration Initdb_1->Initdb_n
+3. Nếu dùng interface bỏ các interface vào thư mục interface
