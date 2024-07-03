@@ -4,6 +4,7 @@ using DuAn2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DuAn2.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20240703030125_Initdb37")]
+    partial class Initdb37
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,23 +23,6 @@ namespace DuAn2.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("DuAn2.Data.DungCu", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ghiChu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("tenDungCu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("dungCus");
-                });
 
             modelBuilder.Entity("DuAn2.Data.GiaoVien", b =>
                 {
@@ -351,41 +336,6 @@ namespace DuAn2.Migrations
                     b.ToTable("mucTienCongs");
                 });
 
-            modelBuilder.Entity("DuAn2.Data.PhongHoc", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ghiChu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("tenPhongHoc")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("phongHocs");
-                });
-
-            modelBuilder.Entity("DuAn2.Data.PhongHoc_DungCu", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DungCuId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhongHocId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("phongHoc_DungCus");
-                });
-
             modelBuilder.Entity("DuAn2.Data.ThoiDiem", b =>
                 {
                     b.Property<string>("Id")
@@ -459,23 +409,6 @@ namespace DuAn2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TKBs");
-                });
-
-            modelBuilder.Entity("DuAn2.Data.TrinhDo", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ghiChu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("tenTrinhDo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("trinhDos");
                 });
 
             modelBuilder.Entity("DuAn2.Data.LichTKB", b =>

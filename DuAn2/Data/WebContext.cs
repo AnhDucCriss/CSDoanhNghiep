@@ -24,6 +24,10 @@ namespace DuAn2.Data
         public DbSet<TKB>? TKBs { get; set; }
         public DbSet<LichTKB>? lichTKBs { get; set; }
         public DbSet<ThoiDiem>? thoiDiems { get; set; }
+        public DbSet<DungCu>? dungCus { get; set; }
+        public DbSet<TrinhDo>? trinhDos { get; set; }
+        public DbSet<PhongHoc>? phongHocs { get; set; }
+        public DbSet<PhongHoc_DungCu>? phongHoc_DungCus { get; set; }
         #endregion
     }
 }
